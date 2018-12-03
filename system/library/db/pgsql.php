@@ -4,7 +4,7 @@ final class PgSQL {
 	private $connection;
 
 	public function __construct($hostname, $username, $password, $database, $port = '5432') {
-		$this->connection = @pg_connect('hostname=' . $hostname . ' port=' . $port .  ' username=' . $username . ' password='	. $password . ' database=' . $database);
+		$this->connection = @pg_connect('host=' . $hostname . ' port=' . $port .  ' username=' . $username . ' password='	. $password . ' database=' . $database);
 
 		if (!$this->connection) {
 			throw new \Exception('Error: Could not make a database link using ' . $username . '@' . $hostname);
